@@ -1,9 +1,10 @@
 package org.sid.bankgrpcservice.grpc.service;
 
 import io.grpc.stub.StreamObserver;
+import net.devh.boot.grpc.server.service.GrpcService;
 import org.sid.bankgrpcservice.grpc.stub.Bank;
 import org.sid.bankgrpcservice.grpc.stub.BankServiceGrpc;
-
+@GrpcService
 public class BankGrpcServiceImp extends BankServiceGrpc.BankServiceImplBase {
     @Override
     public void getBankAccount(Bank.GetBankAccountRequest request, StreamObserver<Bank.GetBankAccountResponse> responseObserver) {
