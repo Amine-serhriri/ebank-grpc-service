@@ -10,6 +10,15 @@ enum AccountState{
   Suspended=2;
   Blocked = 3 ;
 }
+enum TransactionType{
+  DEBIT=0;
+  CREDIT=1;
+}
+enum TransactionStatus{
+  PENDING=0;
+  EXECUTED=1;
+  REJECTED=2;
+}
 
 message BankAccount {
   string accountId = 1 ;
@@ -39,9 +48,22 @@ message ConvertCurrencyResponse{
   double amount=3;
   double conversionResult =4;
 }
+message Transaction{
+  int64 id=1;
+  string accountId=2;
+  int64 timestamp=3;
+  double amount=4;
+  TransactionType type=5;
+  TransactionStatus status=6;
+}
+message GetStreamOfTransactionRequest{
+  string accountId=1;
+
+}
 
 service BankService{
   rpc getBankAccount(GetBankAccountRequest) returns(GetBankAccountResponse); //unary Model
   rpc getListAccount(GetListAccountRequest) returns (GetListAccountResponse); //unary Model
   rpc convertCurrency(ConvertCurrencyRequest)returns (ConvertCurrencyResponse);//unary Model
+  rpc getStreamOfTransaction(GetStreamOfTransactionRequest)returns(stream Transaction);
 }
