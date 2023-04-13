@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class GrpcClient {
     public static void main(String[] args) throws IOException {
-        ManagedChannel managedChannel= ManagedChannelBuilder.forAddress("localhost",9999)
+        ManagedChannel managedChannel= ManagedChannelBuilder.forAddress("localhost",8888)
                 .usePlaintext()
                 .build();
         BankServiceGrpc.BankServiceBlockingStub blockingStub= BankServiceGrpc.newBlockingStub(managedChannel);
@@ -50,6 +50,30 @@ public class GrpcClient {
             @Override
             public void onCompleted() {
                 System.out.println("fin de l'échange ");
+            }
+        });
+        Bank.GetStreamOfTransactionRequest request = Bank.GetStreamOfTransactionRequest.newBuilder()
+                .setAccountId("CC1")
+                .build();
+        bankServiceStub.getStreamOfTransaction(request, new StreamObserver<Bank.Transaction>() {
+            @Override
+            public void onNext(Bank.Transaction transaction) {
+                System.out.println("**************** New Transaction Item ************* ");
+                System.out.println(transaction.getAmount());
+                System.out.println(transaction.getAmount());
+                System.out.println(transaction.getType());
+                System.out.println(transaction.getStatus());
+                System.out.println("***********************************");
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+                System.out.println("END ");
             }
         });
         System.in.read();

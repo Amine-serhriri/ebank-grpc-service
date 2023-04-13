@@ -240,6 +240,223 @@ public final class Bank {
     // @@protoc_insertion_point(enum_scope:AccountState)
   }
 
+  /**
+   * Protobuf enum {@code TransactionType}
+   */
+  public enum TransactionType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>DEBIT = 0;</code>
+     */
+    DEBIT(0),
+    /**
+     * <code>CREDIT = 1;</code>
+     */
+    CREDIT(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>DEBIT = 0;</code>
+     */
+    public static final int DEBIT_VALUE = 0;
+    /**
+     * <code>CREDIT = 1;</code>
+     */
+    public static final int CREDIT_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TransactionType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TransactionType forNumber(int value) {
+      switch (value) {
+        case 0: return DEBIT;
+        case 1: return CREDIT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TransactionType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TransactionType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TransactionType>() {
+            public TransactionType findValueByNumber(int number) {
+              return TransactionType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.sid.bankgrpcservice.grpc.stub.Bank.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TransactionType[] VALUES = values();
+
+    public static TransactionType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TransactionType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:TransactionType)
+  }
+
+  /**
+   * Protobuf enum {@code TransactionStatus}
+   */
+  public enum TransactionStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>PENDING = 0;</code>
+     */
+    PENDING(0),
+    /**
+     * <code>EXECUTED = 1;</code>
+     */
+    EXECUTED(1),
+    /**
+     * <code>REJECTED = 2;</code>
+     */
+    REJECTED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>PENDING = 0;</code>
+     */
+    public static final int PENDING_VALUE = 0;
+    /**
+     * <code>EXECUTED = 1;</code>
+     */
+    public static final int EXECUTED_VALUE = 1;
+    /**
+     * <code>REJECTED = 2;</code>
+     */
+    public static final int REJECTED_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TransactionStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TransactionStatus forNumber(int value) {
+      switch (value) {
+        case 0: return PENDING;
+        case 1: return EXECUTED;
+        case 2: return REJECTED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TransactionStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        TransactionStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TransactionStatus>() {
+            public TransactionStatus findValueByNumber(int number) {
+              return TransactionStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.sid.bankgrpcservice.grpc.stub.Bank.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final TransactionStatus[] VALUES = values();
+
+    public static TransactionStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TransactionStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:TransactionStatus)
+  }
+
   public interface BankAccountOrBuilder extends
       // @@protoc_insertion_point(interface_extends:BankAccount)
       com.google.protobuf.MessageOrBuilder {
@@ -5183,6 +5400,2254 @@ public final class Bank {
 
   }
 
+  public interface TransactionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Transaction)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    long getId();
+
+    /**
+     * <code>string accountId = 2;</code>
+     * @return The accountId.
+     */
+    java.lang.String getAccountId();
+    /**
+     * <code>string accountId = 2;</code>
+     * @return The bytes for accountId.
+     */
+    com.google.protobuf.ByteString
+        getAccountIdBytes();
+
+    /**
+     * <code>int64 timestamp = 3;</code>
+     * @return The timestamp.
+     */
+    long getTimestamp();
+
+    /**
+     * <code>double amount = 4;</code>
+     * @return The amount.
+     */
+    double getAmount();
+
+    /**
+     * <code>.TransactionType type = 5;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <code>.TransactionType type = 5;</code>
+     * @return The type.
+     */
+    org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType getType();
+
+    /**
+     * <code>.TransactionStatus status = 6;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <code>.TransactionStatus status = 6;</code>
+     * @return The status.
+     */
+    org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus getStatus();
+  }
+  /**
+   * Protobuf type {@code Transaction}
+   */
+  public  static final class Transaction extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Transaction)
+      TransactionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Transaction.newBuilder() to construct.
+    private Transaction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Transaction() {
+      accountId_ = "";
+      type_ = 0;
+      status_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Transaction();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Transaction(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              id_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accountId_ = s;
+              break;
+            }
+            case 24: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 33: {
+
+              amount_ = input.readDouble();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              type_ = rawValue;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_Transaction_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_Transaction_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.class, org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    public long getId() {
+      return id_;
+    }
+
+    public static final int ACCOUNTID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object accountId_;
+    /**
+     * <code>string accountId = 2;</code>
+     * @return The accountId.
+     */
+    public java.lang.String getAccountId() {
+      java.lang.Object ref = accountId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string accountId = 2;</code>
+     * @return The bytes for accountId.
+     */
+    public com.google.protobuf.ByteString
+        getAccountIdBytes() {
+      java.lang.Object ref = accountId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 3;
+    private long timestamp_;
+    /**
+     * <code>int64 timestamp = 3;</code>
+     * @return The timestamp.
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 4;
+    private double amount_;
+    /**
+     * <code>double amount = 4;</code>
+     * @return The amount.
+     */
+    public double getAmount() {
+      return amount_;
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 5;
+    private int type_;
+    /**
+     * <code>.TransactionType type = 5;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.TransactionType type = 5;</code>
+     * @return The type.
+     */
+    public org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType getType() {
+      @SuppressWarnings("deprecation")
+      org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType result = org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType.valueOf(type_);
+      return result == null ? org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType.UNRECOGNIZED : result;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 6;
+    private int status_;
+    /**
+     * <code>.TransactionStatus status = 6;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <code>.TransactionStatus status = 6;</code>
+     * @return The status.
+     */
+    public org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus result = org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus.valueOf(status_);
+      return result == null ? org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (id_ != 0L) {
+        output.writeInt64(1, id_);
+      }
+      if (!getAccountIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, accountId_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(3, timestamp_);
+      }
+      if (amount_ != 0D) {
+        output.writeDouble(4, amount_);
+      }
+      if (type_ != org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType.DEBIT.getNumber()) {
+        output.writeEnum(5, type_);
+      }
+      if (status_ != org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus.PENDING.getNumber()) {
+        output.writeEnum(6, status_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, id_);
+      }
+      if (!getAccountIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, accountId_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, timestamp_);
+      }
+      if (amount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, amount_);
+      }
+      if (type_ != org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType.DEBIT.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, type_);
+      }
+      if (status_ != org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus.PENDING.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, status_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.sid.bankgrpcservice.grpc.stub.Bank.Transaction)) {
+        return super.equals(obj);
+      }
+      org.sid.bankgrpcservice.grpc.stub.Bank.Transaction other = (org.sid.bankgrpcservice.grpc.stub.Bank.Transaction) obj;
+
+      if (getId()
+          != other.getId()) return false;
+      if (!getAccountId()
+          .equals(other.getAccountId())) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (java.lang.Double.doubleToLongBits(getAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getAmount())) return false;
+      if (type_ != other.type_) return false;
+      if (status_ != other.status_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
+      hash = (37 * hash) + ACCOUNTID_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountId().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getAmount()));
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.sid.bankgrpcservice.grpc.stub.Bank.Transaction prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Transaction}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Transaction)
+        org.sid.bankgrpcservice.grpc.stub.Bank.TransactionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_Transaction_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_Transaction_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.class, org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.Builder.class);
+      }
+
+      // Construct using org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = 0L;
+
+        accountId_ = "";
+
+        timestamp_ = 0L;
+
+        amount_ = 0D;
+
+        type_ = 0;
+
+        status_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_Transaction_descriptor;
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.Transaction getDefaultInstanceForType() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.Transaction build() {
+        org.sid.bankgrpcservice.grpc.stub.Bank.Transaction result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.Transaction buildPartial() {
+        org.sid.bankgrpcservice.grpc.stub.Bank.Transaction result = new org.sid.bankgrpcservice.grpc.stub.Bank.Transaction(this);
+        result.id_ = id_;
+        result.accountId_ = accountId_;
+        result.timestamp_ = timestamp_;
+        result.amount_ = amount_;
+        result.type_ = type_;
+        result.status_ = status_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.sid.bankgrpcservice.grpc.stub.Bank.Transaction) {
+          return mergeFrom((org.sid.bankgrpcservice.grpc.stub.Bank.Transaction)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.sid.bankgrpcservice.grpc.stub.Bank.Transaction other) {
+        if (other == org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.getDefaultInstance()) return this;
+        if (other.getId() != 0L) {
+          setId(other.getId());
+        }
+        if (!other.getAccountId().isEmpty()) {
+          accountId_ = other.accountId_;
+          onChanged();
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getAmount() != 0D) {
+          setAmount(other.getAmount());
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.status_ != 0) {
+          setStatusValue(other.getStatusValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.sid.bankgrpcservice.grpc.stub.Bank.Transaction parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.sid.bankgrpcservice.grpc.stub.Bank.Transaction) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object accountId_ = "";
+      /**
+       * <code>string accountId = 2;</code>
+       * @return The accountId.
+       */
+      public java.lang.String getAccountId() {
+        java.lang.Object ref = accountId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accountId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string accountId = 2;</code>
+       * @return The bytes for accountId.
+       */
+      public com.google.protobuf.ByteString
+          getAccountIdBytes() {
+        java.lang.Object ref = accountId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accountId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string accountId = 2;</code>
+       * @param value The accountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        accountId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string accountId = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccountId() {
+        
+        accountId_ = getDefaultInstance().getAccountId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string accountId = 2;</code>
+       * @param value The bytes for accountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        accountId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 timestamp = 3;</code>
+       * @return The timestamp.
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 timestamp = 3;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 timestamp = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double amount_ ;
+      /**
+       * <code>double amount = 4;</code>
+       * @return The amount.
+       */
+      public double getAmount() {
+        return amount_;
+      }
+      /**
+       * <code>double amount = 4;</code>
+       * @param value The amount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAmount(double value) {
+        
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double amount = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAmount() {
+        
+        amount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>.TransactionType type = 5;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.TransactionType type = 5;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.TransactionType type = 5;</code>
+       * @return The type.
+       */
+      public org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType getType() {
+        @SuppressWarnings("deprecation")
+        org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType result = org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType.valueOf(type_);
+        return result == null ? org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.TransactionType type = 5;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(org.sid.bankgrpcservice.grpc.stub.Bank.TransactionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.TransactionType type = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>.TransactionStatus status = 6;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.TransactionStatus status = 6;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.TransactionStatus status = 6;</code>
+       * @return The status.
+       */
+      public org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus getStatus() {
+        @SuppressWarnings("deprecation")
+        org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus result = org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus.valueOf(status_);
+        return result == null ? org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.TransactionStatus status = 6;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(org.sid.bankgrpcservice.grpc.stub.Bank.TransactionStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.TransactionStatus status = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Transaction)
+    }
+
+    // @@protoc_insertion_point(class_scope:Transaction)
+    private static final org.sid.bankgrpcservice.grpc.stub.Bank.Transaction DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.sid.bankgrpcservice.grpc.stub.Bank.Transaction();
+    }
+
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.Transaction getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Transaction>
+        PARSER = new com.google.protobuf.AbstractParser<Transaction>() {
+      @java.lang.Override
+      public Transaction parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Transaction(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Transaction> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Transaction> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.sid.bankgrpcservice.grpc.stub.Bank.Transaction getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface GetStreamOfTransactionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:GetStreamOfTransactionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string accountId = 1;</code>
+     * @return The accountId.
+     */
+    java.lang.String getAccountId();
+    /**
+     * <code>string accountId = 1;</code>
+     * @return The bytes for accountId.
+     */
+    com.google.protobuf.ByteString
+        getAccountIdBytes();
+  }
+  /**
+   * Protobuf type {@code GetStreamOfTransactionRequest}
+   */
+  public  static final class GetStreamOfTransactionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:GetStreamOfTransactionRequest)
+      GetStreamOfTransactionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use GetStreamOfTransactionRequest.newBuilder() to construct.
+    private GetStreamOfTransactionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private GetStreamOfTransactionRequest() {
+      accountId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new GetStreamOfTransactionRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private GetStreamOfTransactionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accountId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_GetStreamOfTransactionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_GetStreamOfTransactionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.class, org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.Builder.class);
+    }
+
+    public static final int ACCOUNTID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object accountId_;
+    /**
+     * <code>string accountId = 1;</code>
+     * @return The accountId.
+     */
+    public java.lang.String getAccountId() {
+      java.lang.Object ref = accountId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accountId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string accountId = 1;</code>
+     * @return The bytes for accountId.
+     */
+    public com.google.protobuf.ByteString
+        getAccountIdBytes() {
+      java.lang.Object ref = accountId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accountId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAccountIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accountId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAccountIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accountId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest)) {
+        return super.equals(obj);
+      }
+      org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest other = (org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest) obj;
+
+      if (!getAccountId()
+          .equals(other.getAccountId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCOUNTID_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code GetStreamOfTransactionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:GetStreamOfTransactionRequest)
+        org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_GetStreamOfTransactionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_GetStreamOfTransactionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.class, org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.Builder.class);
+      }
+
+      // Construct using org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        accountId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_GetStreamOfTransactionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest getDefaultInstanceForType() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest build() {
+        org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest buildPartial() {
+        org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest result = new org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest(this);
+        result.accountId_ = accountId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest) {
+          return mergeFrom((org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest other) {
+        if (other == org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.getDefaultInstance()) return this;
+        if (!other.getAccountId().isEmpty()) {
+          accountId_ = other.accountId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object accountId_ = "";
+      /**
+       * <code>string accountId = 1;</code>
+       * @return The accountId.
+       */
+      public java.lang.String getAccountId() {
+        java.lang.Object ref = accountId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accountId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string accountId = 1;</code>
+       * @return The bytes for accountId.
+       */
+      public com.google.protobuf.ByteString
+          getAccountIdBytes() {
+        java.lang.Object ref = accountId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accountId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string accountId = 1;</code>
+       * @param value The accountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        accountId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string accountId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccountId() {
+        
+        accountId_ = getDefaultInstance().getAccountId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string accountId = 1;</code>
+       * @param value The bytes for accountId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccountIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        accountId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:GetStreamOfTransactionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:GetStreamOfTransactionRequest)
+    private static final org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest();
+    }
+
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GetStreamOfTransactionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<GetStreamOfTransactionRequest>() {
+      @java.lang.Override
+      public GetStreamOfTransactionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GetStreamOfTransactionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GetStreamOfTransactionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GetStreamOfTransactionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PerformStreamOfTransactionsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:PerformStreamOfTransactionsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double totalTransactionAmount = 1;</code>
+     * @return The totalTransactionAmount.
+     */
+    double getTotalTransactionAmount();
+
+    /**
+     * <code>double totalCreditTransactionAmount = 2;</code>
+     * @return The totalCreditTransactionAmount.
+     */
+    double getTotalCreditTransactionAmount();
+
+    /**
+     * <code>double totalDebitTransactionAmount = 3;</code>
+     * @return The totalDebitTransactionAmount.
+     */
+    double getTotalDebitTransactionAmount();
+
+    /**
+     * <code>double executedTransactionCount = 4;</code>
+     * @return The executedTransactionCount.
+     */
+    double getExecutedTransactionCount();
+  }
+  /**
+   * Protobuf type {@code PerformStreamOfTransactionsResponse}
+   */
+  public  static final class PerformStreamOfTransactionsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:PerformStreamOfTransactionsResponse)
+      PerformStreamOfTransactionsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PerformStreamOfTransactionsResponse.newBuilder() to construct.
+    private PerformStreamOfTransactionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PerformStreamOfTransactionsResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new PerformStreamOfTransactionsResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PerformStreamOfTransactionsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              totalTransactionAmount_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              totalCreditTransactionAmount_ = input.readDouble();
+              break;
+            }
+            case 25: {
+
+              totalDebitTransactionAmount_ = input.readDouble();
+              break;
+            }
+            case 33: {
+
+              executedTransactionCount_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_PerformStreamOfTransactionsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_PerformStreamOfTransactionsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.class, org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.Builder.class);
+    }
+
+    public static final int TOTALTRANSACTIONAMOUNT_FIELD_NUMBER = 1;
+    private double totalTransactionAmount_;
+    /**
+     * <code>double totalTransactionAmount = 1;</code>
+     * @return The totalTransactionAmount.
+     */
+    public double getTotalTransactionAmount() {
+      return totalTransactionAmount_;
+    }
+
+    public static final int TOTALCREDITTRANSACTIONAMOUNT_FIELD_NUMBER = 2;
+    private double totalCreditTransactionAmount_;
+    /**
+     * <code>double totalCreditTransactionAmount = 2;</code>
+     * @return The totalCreditTransactionAmount.
+     */
+    public double getTotalCreditTransactionAmount() {
+      return totalCreditTransactionAmount_;
+    }
+
+    public static final int TOTALDEBITTRANSACTIONAMOUNT_FIELD_NUMBER = 3;
+    private double totalDebitTransactionAmount_;
+    /**
+     * <code>double totalDebitTransactionAmount = 3;</code>
+     * @return The totalDebitTransactionAmount.
+     */
+    public double getTotalDebitTransactionAmount() {
+      return totalDebitTransactionAmount_;
+    }
+
+    public static final int EXECUTEDTRANSACTIONCOUNT_FIELD_NUMBER = 4;
+    private double executedTransactionCount_;
+    /**
+     * <code>double executedTransactionCount = 4;</code>
+     * @return The executedTransactionCount.
+     */
+    public double getExecutedTransactionCount() {
+      return executedTransactionCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (totalTransactionAmount_ != 0D) {
+        output.writeDouble(1, totalTransactionAmount_);
+      }
+      if (totalCreditTransactionAmount_ != 0D) {
+        output.writeDouble(2, totalCreditTransactionAmount_);
+      }
+      if (totalDebitTransactionAmount_ != 0D) {
+        output.writeDouble(3, totalDebitTransactionAmount_);
+      }
+      if (executedTransactionCount_ != 0D) {
+        output.writeDouble(4, executedTransactionCount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (totalTransactionAmount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, totalTransactionAmount_);
+      }
+      if (totalCreditTransactionAmount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, totalCreditTransactionAmount_);
+      }
+      if (totalDebitTransactionAmount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, totalDebitTransactionAmount_);
+      }
+      if (executedTransactionCount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, executedTransactionCount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse)) {
+        return super.equals(obj);
+      }
+      org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse other = (org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse) obj;
+
+      if (java.lang.Double.doubleToLongBits(getTotalTransactionAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getTotalTransactionAmount())) return false;
+      if (java.lang.Double.doubleToLongBits(getTotalCreditTransactionAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getTotalCreditTransactionAmount())) return false;
+      if (java.lang.Double.doubleToLongBits(getTotalDebitTransactionAmount())
+          != java.lang.Double.doubleToLongBits(
+              other.getTotalDebitTransactionAmount())) return false;
+      if (java.lang.Double.doubleToLongBits(getExecutedTransactionCount())
+          != java.lang.Double.doubleToLongBits(
+              other.getExecutedTransactionCount())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOTALTRANSACTIONAMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTotalTransactionAmount()));
+      hash = (37 * hash) + TOTALCREDITTRANSACTIONAMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTotalCreditTransactionAmount()));
+      hash = (37 * hash) + TOTALDEBITTRANSACTIONAMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTotalDebitTransactionAmount()));
+      hash = (37 * hash) + EXECUTEDTRANSACTIONCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getExecutedTransactionCount()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code PerformStreamOfTransactionsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:PerformStreamOfTransactionsResponse)
+        org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_PerformStreamOfTransactionsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_PerformStreamOfTransactionsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.class, org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.Builder.class);
+      }
+
+      // Construct using org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        totalTransactionAmount_ = 0D;
+
+        totalCreditTransactionAmount_ = 0D;
+
+        totalDebitTransactionAmount_ = 0D;
+
+        executedTransactionCount_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.internal_static_PerformStreamOfTransactionsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse getDefaultInstanceForType() {
+        return org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse build() {
+        org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse buildPartial() {
+        org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse result = new org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse(this);
+        result.totalTransactionAmount_ = totalTransactionAmount_;
+        result.totalCreditTransactionAmount_ = totalCreditTransactionAmount_;
+        result.totalDebitTransactionAmount_ = totalDebitTransactionAmount_;
+        result.executedTransactionCount_ = executedTransactionCount_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse) {
+          return mergeFrom((org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse other) {
+        if (other == org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.getDefaultInstance()) return this;
+        if (other.getTotalTransactionAmount() != 0D) {
+          setTotalTransactionAmount(other.getTotalTransactionAmount());
+        }
+        if (other.getTotalCreditTransactionAmount() != 0D) {
+          setTotalCreditTransactionAmount(other.getTotalCreditTransactionAmount());
+        }
+        if (other.getTotalDebitTransactionAmount() != 0D) {
+          setTotalDebitTransactionAmount(other.getTotalDebitTransactionAmount());
+        }
+        if (other.getExecutedTransactionCount() != 0D) {
+          setExecutedTransactionCount(other.getExecutedTransactionCount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double totalTransactionAmount_ ;
+      /**
+       * <code>double totalTransactionAmount = 1;</code>
+       * @return The totalTransactionAmount.
+       */
+      public double getTotalTransactionAmount() {
+        return totalTransactionAmount_;
+      }
+      /**
+       * <code>double totalTransactionAmount = 1;</code>
+       * @param value The totalTransactionAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalTransactionAmount(double value) {
+        
+        totalTransactionAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double totalTransactionAmount = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalTransactionAmount() {
+        
+        totalTransactionAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double totalCreditTransactionAmount_ ;
+      /**
+       * <code>double totalCreditTransactionAmount = 2;</code>
+       * @return The totalCreditTransactionAmount.
+       */
+      public double getTotalCreditTransactionAmount() {
+        return totalCreditTransactionAmount_;
+      }
+      /**
+       * <code>double totalCreditTransactionAmount = 2;</code>
+       * @param value The totalCreditTransactionAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalCreditTransactionAmount(double value) {
+        
+        totalCreditTransactionAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double totalCreditTransactionAmount = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalCreditTransactionAmount() {
+        
+        totalCreditTransactionAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double totalDebitTransactionAmount_ ;
+      /**
+       * <code>double totalDebitTransactionAmount = 3;</code>
+       * @return The totalDebitTransactionAmount.
+       */
+      public double getTotalDebitTransactionAmount() {
+        return totalDebitTransactionAmount_;
+      }
+      /**
+       * <code>double totalDebitTransactionAmount = 3;</code>
+       * @param value The totalDebitTransactionAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalDebitTransactionAmount(double value) {
+        
+        totalDebitTransactionAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double totalDebitTransactionAmount = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalDebitTransactionAmount() {
+        
+        totalDebitTransactionAmount_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double executedTransactionCount_ ;
+      /**
+       * <code>double executedTransactionCount = 4;</code>
+       * @return The executedTransactionCount.
+       */
+      public double getExecutedTransactionCount() {
+        return executedTransactionCount_;
+      }
+      /**
+       * <code>double executedTransactionCount = 4;</code>
+       * @param value The executedTransactionCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExecutedTransactionCount(double value) {
+        
+        executedTransactionCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double executedTransactionCount = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearExecutedTransactionCount() {
+        
+        executedTransactionCount_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:PerformStreamOfTransactionsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:PerformStreamOfTransactionsResponse)
+    private static final org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse();
+    }
+
+    public static org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PerformStreamOfTransactionsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PerformStreamOfTransactionsResponse>() {
+      @java.lang.Override
+      public PerformStreamOfTransactionsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new PerformStreamOfTransactionsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PerformStreamOfTransactionsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PerformStreamOfTransactionsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_BankAccount_descriptor;
   private static final 
@@ -5218,6 +7683,21 @@ public final class Bank {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ConvertCurrencyResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Transaction_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Transaction_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetStreamOfTransactionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GetStreamOfTransactionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PerformStreamOfTransactionsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PerformStreamOfTransactionsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5240,16 +7720,34 @@ public final class Bank {
       "mount\030\003 \001(\001\"m\n\027ConvertCurrencyResponse\022\024" +
       "\n\014currencyFrom\030\001 \001(\t\022\022\n\ncurrencyTo\030\002 \001(\t" +
       "\022\016\n\006amount\030\003 \001(\001\022\030\n\020conversionResult\030\004 \001" +
-      "(\001*6\n\013AccountType\022\023\n\017Current_Account\020\000\022\022" +
-      "\n\016Saving_Account\020\001*F\n\014AccountState\022\013\n\007Cr" +
-      "eated\020\000\022\r\n\tActivated\020\001\022\r\n\tSuspended\020\002\022\013\n" +
-      "\007Blocked\020\0032\331\001\n\013BankService\022A\n\016getBankAcc" +
-      "ount\022\026.GetBankAccountRequest\032\027.GetBankAc" +
-      "countResponse\022A\n\016getListAccount\022\026.GetLis" +
-      "tAccountRequest\032\027.GetListAccountResponse" +
-      "\022D\n\017convertCurrency\022\027.ConvertCurrencyReq" +
-      "uest\032\030.ConvertCurrencyResponseB#\n!org.si" +
-      "d.bankgrpcservice.grpc.stubb\006proto3"
+      "(\001\"\223\001\n\013Transaction\022\n\n\002id\030\001 \001(\003\022\021\n\taccoun" +
+      "tId\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\022\016\n\006amount\030\004" +
+      " \001(\001\022\036\n\004type\030\005 \001(\0162\020.TransactionType\022\"\n\006" +
+      "status\030\006 \001(\0162\022.TransactionStatus\"2\n\035GetS" +
+      "treamOfTransactionRequest\022\021\n\taccountId\030\001" +
+      " \001(\t\"\262\001\n#PerformStreamOfTransactionsResp" +
+      "onse\022\036\n\026totalTransactionAmount\030\001 \001(\001\022$\n\034" +
+      "totalCreditTransactionAmount\030\002 \001(\001\022#\n\033to" +
+      "talDebitTransactionAmount\030\003 \001(\001\022 \n\030execu" +
+      "tedTransactionCount\030\004 \001(\001*6\n\013AccountType" +
+      "\022\023\n\017Current_Account\020\000\022\022\n\016Saving_Account\020" +
+      "\001*F\n\014AccountState\022\013\n\007Created\020\000\022\r\n\tActiva" +
+      "ted\020\001\022\r\n\tSuspended\020\002\022\013\n\007Blocked\020\003*(\n\017Tra" +
+      "nsactionType\022\t\n\005DEBIT\020\000\022\n\n\006CREDIT\020\001*<\n\021T" +
+      "ransactionStatus\022\013\n\007PENDING\020\000\022\014\n\010EXECUTE" +
+      "D\020\001\022\014\n\010REJECTED\020\0022\265\003\n\013BankService\022A\n\016get" +
+      "BankAccount\022\026.GetBankAccountRequest\032\027.Ge" +
+      "tBankAccountResponse\022A\n\016getListAccount\022\026" +
+      ".GetListAccountRequest\032\027.GetListAccountR" +
+      "esponse\022D\n\017convertCurrency\022\027.ConvertCurr" +
+      "encyRequest\032\030.ConvertCurrencyResponse\022H\n" +
+      "\026getStreamOfTransaction\022\036.GetStreamOfTra" +
+      "nsactionRequest\032\014.Transaction0\001\022R\n\032perfo" +
+      "rmStreamOfTransaction\022\014.Transaction\032$.Pe" +
+      "rformStreamOfTransactionsResponse(\001\022<\n\032e" +
+      "xecuteStreamOfTransaction\022\014.Transaction\032" +
+      "\014.Transaction(\0010\001B#\n!org.sid.bankgrpcser" +
+      "vice.grpc.stubb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5297,6 +7795,24 @@ public final class Bank {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ConvertCurrencyResponse_descriptor,
         new java.lang.String[] { "CurrencyFrom", "CurrencyTo", "Amount", "ConversionResult", });
+    internal_static_Transaction_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_Transaction_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Transaction_descriptor,
+        new java.lang.String[] { "Id", "AccountId", "Timestamp", "Amount", "Type", "Status", });
+    internal_static_GetStreamOfTransactionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_GetStreamOfTransactionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GetStreamOfTransactionRequest_descriptor,
+        new java.lang.String[] { "AccountId", });
+    internal_static_PerformStreamOfTransactionsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_PerformStreamOfTransactionsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PerformStreamOfTransactionsResponse_descriptor,
+        new java.lang.String[] { "TotalTransactionAmount", "TotalCreditTransactionAmount", "TotalDebitTransactionAmount", "ExecutedTransactionCount", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

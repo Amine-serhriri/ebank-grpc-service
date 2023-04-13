@@ -123,6 +123,102 @@ public final class BankServiceGrpc {
      return getConvertCurrencyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest,
+      org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> getGetStreamOfTransactionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getStreamOfTransaction",
+      requestType = org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.class,
+      responseType = org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest,
+      org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> getGetStreamOfTransactionMethod() {
+    io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest, org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> getGetStreamOfTransactionMethod;
+    if ((getGetStreamOfTransactionMethod = BankServiceGrpc.getGetStreamOfTransactionMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getGetStreamOfTransactionMethod = BankServiceGrpc.getGetStreamOfTransactionMethod) == null) {
+          BankServiceGrpc.getGetStreamOfTransactionMethod = getGetStreamOfTransactionMethod = 
+              io.grpc.MethodDescriptor.<org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest, org.sid.bankgrpcservice.grpc.stub.Bank.Transaction>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "BankService", "getStreamOfTransaction"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.getDefaultInstance()))
+                  .setSchemaDescriptor(new BankServiceMethodDescriptorSupplier("getStreamOfTransaction"))
+                  .build();
+          }
+        }
+     }
+     return getGetStreamOfTransactionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction,
+      org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse> getPerformStreamOfTransactionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "performStreamOfTransaction",
+      requestType = org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.class,
+      responseType = org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction,
+      org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse> getPerformStreamOfTransactionMethod() {
+    io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction, org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse> getPerformStreamOfTransactionMethod;
+    if ((getPerformStreamOfTransactionMethod = BankServiceGrpc.getPerformStreamOfTransactionMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getPerformStreamOfTransactionMethod = BankServiceGrpc.getPerformStreamOfTransactionMethod) == null) {
+          BankServiceGrpc.getPerformStreamOfTransactionMethod = getPerformStreamOfTransactionMethod = 
+              io.grpc.MethodDescriptor.<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction, org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "BankService", "performStreamOfTransaction"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new BankServiceMethodDescriptorSupplier("performStreamOfTransaction"))
+                  .build();
+          }
+        }
+     }
+     return getPerformStreamOfTransactionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction,
+      org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> getExecuteStreamOfTransactionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "executeStreamOfTransaction",
+      requestType = org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.class,
+      responseType = org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction,
+      org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> getExecuteStreamOfTransactionMethod() {
+    io.grpc.MethodDescriptor<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction, org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> getExecuteStreamOfTransactionMethod;
+    if ((getExecuteStreamOfTransactionMethod = BankServiceGrpc.getExecuteStreamOfTransactionMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getExecuteStreamOfTransactionMethod = BankServiceGrpc.getExecuteStreamOfTransactionMethod) == null) {
+          BankServiceGrpc.getExecuteStreamOfTransactionMethod = getExecuteStreamOfTransactionMethod = 
+              io.grpc.MethodDescriptor.<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction, org.sid.bankgrpcservice.grpc.stub.Bank.Transaction>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "BankService", "executeStreamOfTransaction"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  org.sid.bankgrpcservice.grpc.stub.Bank.Transaction.getDefaultInstance()))
+                  .setSchemaDescriptor(new BankServiceMethodDescriptorSupplier("executeStreamOfTransaction"))
+                  .build();
+          }
+        }
+     }
+     return getExecuteStreamOfTransactionMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -180,6 +276,36 @@ public final class BankServiceGrpc {
       asyncUnimplementedUnaryCall(getConvertCurrencyMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     *server Streaming
+     * </pre>
+     */
+    public void getStreamOfTransaction(org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest request,
+        io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetStreamOfTransactionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Client Streaming
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> performStreamOfTransaction(
+        io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getPerformStreamOfTransactionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *bidirectional Streaming
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> executeStreamOfTransaction(
+        io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> responseObserver) {
+      return asyncUnimplementedStreamingCall(getExecuteStreamOfTransactionMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -203,6 +329,27 @@ public final class BankServiceGrpc {
                 org.sid.bankgrpcservice.grpc.stub.Bank.ConvertCurrencyRequest,
                 org.sid.bankgrpcservice.grpc.stub.Bank.ConvertCurrencyResponse>(
                   this, METHODID_CONVERT_CURRENCY)))
+          .addMethod(
+            getGetStreamOfTransactionMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest,
+                org.sid.bankgrpcservice.grpc.stub.Bank.Transaction>(
+                  this, METHODID_GET_STREAM_OF_TRANSACTION)))
+          .addMethod(
+            getPerformStreamOfTransactionMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                org.sid.bankgrpcservice.grpc.stub.Bank.Transaction,
+                org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse>(
+                  this, METHODID_PERFORM_STREAM_OF_TRANSACTION)))
+          .addMethod(
+            getExecuteStreamOfTransactionMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                org.sid.bankgrpcservice.grpc.stub.Bank.Transaction,
+                org.sid.bankgrpcservice.grpc.stub.Bank.Transaction>(
+                  this, METHODID_EXECUTE_STREAM_OF_TRANSACTION)))
           .build();
     }
   }
@@ -257,6 +404,39 @@ public final class BankServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getConvertCurrencyMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     *server Streaming
+     * </pre>
+     */
+    public void getStreamOfTransaction(org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest request,
+        io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getGetStreamOfTransactionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *Client Streaming
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> performStreamOfTransaction(
+        io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getPerformStreamOfTransactionMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     * <pre>
+     *bidirectional Streaming
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> executeStreamOfTransaction(
+        io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getExecuteStreamOfTransactionMethod(), getCallOptions()), responseObserver);
+    }
   }
 
   /**
@@ -305,6 +485,17 @@ public final class BankServiceGrpc {
     public org.sid.bankgrpcservice.grpc.stub.Bank.ConvertCurrencyResponse convertCurrency(org.sid.bankgrpcservice.grpc.stub.Bank.ConvertCurrencyRequest request) {
       return blockingUnaryCall(
           getChannel(), getConvertCurrencyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     *server Streaming
+     * </pre>
+     */
+    public java.util.Iterator<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction> getStreamOfTransaction(
+        org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getGetStreamOfTransactionMethod(), getCallOptions(), request);
     }
   }
 
@@ -363,6 +554,9 @@ public final class BankServiceGrpc {
   private static final int METHODID_GET_BANK_ACCOUNT = 0;
   private static final int METHODID_GET_LIST_ACCOUNT = 1;
   private static final int METHODID_CONVERT_CURRENCY = 2;
+  private static final int METHODID_GET_STREAM_OF_TRANSACTION = 3;
+  private static final int METHODID_PERFORM_STREAM_OF_TRANSACTION = 4;
+  private static final int METHODID_EXECUTE_STREAM_OF_TRANSACTION = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -393,6 +587,10 @@ public final class BankServiceGrpc {
           serviceImpl.convertCurrency((org.sid.bankgrpcservice.grpc.stub.Bank.ConvertCurrencyRequest) request,
               (io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.ConvertCurrencyResponse>) responseObserver);
           break;
+        case METHODID_GET_STREAM_OF_TRANSACTION:
+          serviceImpl.getStreamOfTransaction((org.sid.bankgrpcservice.grpc.stub.Bank.GetStreamOfTransactionRequest) request,
+              (io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -403,6 +601,12 @@ public final class BankServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_PERFORM_STREAM_OF_TRANSACTION:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.performStreamOfTransaction(
+              (io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.PerformStreamOfTransactionsResponse>) responseObserver);
+        case METHODID_EXECUTE_STREAM_OF_TRANSACTION:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.executeStreamOfTransaction(
+              (io.grpc.stub.StreamObserver<org.sid.bankgrpcservice.grpc.stub.Bank.Transaction>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -457,6 +661,9 @@ public final class BankServiceGrpc {
               .addMethod(getGetBankAccountMethod())
               .addMethod(getGetListAccountMethod())
               .addMethod(getConvertCurrencyMethod())
+              .addMethod(getGetStreamOfTransactionMethod())
+              .addMethod(getPerformStreamOfTransactionMethod())
+              .addMethod(getExecuteStreamOfTransactionMethod())
               .build();
         }
       }

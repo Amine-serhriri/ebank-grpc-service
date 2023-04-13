@@ -1,17 +1,23 @@
 package org.sid.bankgrpcservice.grpc.service;
 
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.sid.bankgrpcservice.entities.Account;
+import org.sid.bankgrpcservice.entities.AccountTransaction;
 import org.sid.bankgrpcservice.entities.Currency;
 import org.sid.bankgrpcservice.mappers.BankAccountMapperImp;
 import org.sid.bankgrpcservice.grpc.stub.Bank;
 import org.sid.bankgrpcservice.grpc.stub.BankServiceGrpc;
 import org.sid.bankgrpcservice.repository.AccountRepository;
+import org.sid.bankgrpcservice.repository.AccountTransactionRepository;
 import org.sid.bankgrpcservice.repository.CurrencyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Stack;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.stream.Collectors;
 
 @GrpcService
@@ -22,6 +28,8 @@ public class BankGrpcServiceImp extends BankServiceGrpc.BankServiceImplBase {
     private AccountRepository accountRepository;
     @Autowired
     private BankAccountMapperImp bankAccountMapperImp;
+    @Autowired
+    private AccountTransactionRepository accountTransactionRepository;
     @Override
     public void getBankAccount(Bank.GetBankAccountRequest request, StreamObserver<Bank.GetBankAccountResponse> responseObserver) {
         String accountId=request.getAccountId();
@@ -64,5 +72,45 @@ public class BankGrpcServiceImp extends BankServiceGrpc.BankServiceImplBase {
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getStreamOfTransaction(Bank.GetStreamOfTransactionRequest request, StreamObserver<Bank.Transaction> responseObserver) {
+        String accountId=request.getAccountId();
+        List<AccountTransaction> accountTransactions = accountTransactionRepository.findByAccount_Id(accountId);
+        if(accountTransactions.size()==0){
+            responseObserver.onError(
+                    Status.INTERNAL.
+                            withDescription("No Transaction for this Account =>"+accountId).asException());
+            return ;
+        }
+        Stack<Bank.Transaction>transactionStack=new Stack<>();
+        List<Bank.Transaction> TransactionGrpcList = accountTransactions.stream().map(accT -> bankAccountMapperImp.fromAccountTransaction(accT))
+                .collect(Collectors.toList());
+        transactionStack.addAll(TransactionGrpcList);
+        Timer timer=new Timer();
+        timer.schedule(new TimerTask() {
+                           @Override
+                           public void run() {
+                               Bank.Transaction transaction=transactionStack.pop();
+                               responseObserver.onNext(transaction);
+                               if (transactionStack.empty()){
+                                   responseObserver.onCompleted();
+                                   this.cancel();
+                               }
+
+                           }
+                       },
+                0, 1000);
+    }
+
+    @Override
+    public StreamObserver<Bank.Transaction> performStreamOfTransaction(StreamObserver<Bank.PerformStreamOfTransactionsResponse> responseObserver) {
+        return super.performStreamOfTransaction(responseObserver);
+    }
+
+    @Override
+    public StreamObserver<Bank.Transaction> executeStreamOfTransaction(StreamObserver<Bank.Transaction> responseObserver) {
+        return super.executeStreamOfTransaction(responseObserver);
     }
 }

@@ -24,6 +24,6 @@ public class Account {
     private AccountStatus status;
     @ManyToOne
     private Currency currency;
-    @OneToMany(mappedBy = "account")
+    @OneToMany(mappedBy = "account",fetch = FetchType.EAGER)
     private List<AccountTransaction> transactionList;
 }

@@ -60,10 +60,21 @@ message GetStreamOfTransactionRequest{
   string accountId=1;
 
 }
+message PerformStreamOfTransactionsResponse{
+  double totalTransactionAmount=1;
+  double totalCreditTransactionAmount=2;
+  double totalDebitTransactionAmount =3;
+  double executedTransactionCount=4;
+}
 
 service BankService{
   rpc getBankAccount(GetBankAccountRequest) returns(GetBankAccountResponse); //unary Model
   rpc getListAccount(GetListAccountRequest) returns (GetListAccountResponse); //unary Model
   rpc convertCurrency(ConvertCurrencyRequest)returns (ConvertCurrencyResponse);//unary Model
+  //server Streaming
   rpc getStreamOfTransaction(GetStreamOfTransactionRequest)returns(stream Transaction);
+  //Client Streaming
+  rpc performStreamOfTransaction(stream Transaction) returns (PerformStreamOfTransactionsResponse);
+  //bidirectional Streaming
+  rpc executeStreamOfTransaction(stream Transaction) returns (stream Transaction);
 }
